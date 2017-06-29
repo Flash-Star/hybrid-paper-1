@@ -1,0 +1,5 @@
+ni56_vs_nse_mass.pdf : /home/eugene/simulations/flash_runs/hybrid-cone/hddt/v3/profile75/ign_true/400k/analysis/ni56_vs_nse_trend-cf_co_cone_wd.py
+
+final_nse_mass_vs_high_density_mass_at_ddt.pdf : /home/eugene/simulations/flash_runs/hybrid-cone/hddt/v3/profile75/ign_true/400k/analysis/splot-ddt-time-est-nse-vs-mass.py
+
+CO_vs_CONe_*.pdf : /home/eugene/research/hybrid-progenitor-cone/mesa2flash/mk_co_vs_cone_plot.sh

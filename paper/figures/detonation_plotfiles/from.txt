@@ -1,0 +1,11 @@
+dens_poster_showburning.pdf : /home/eugene/simulations/progenitor_cone/explore_burn_torch/outputs/ro1e7/xc12-scans/scan_xc12-0.5_xc12-0.05_46pts/post_dv-0.0001e9_manual_wn_36/wn_0/plotRho_Torch.py
+
+The above is replaced by ::
+Composition_Density_vs_Time.pdf : /home/eugene/simulations/progenitor_cone/explore_burn_torch/outputs/ro1e7/xc12-scans/scan_xc12-0.5_xc12-0.05_46pts/post_dv-0.0001e9_manual_wn_36/wn_0/plot_wn_0_abundances_density.py
+
+__________________________________________
+
+Vdet_vs_xc12_w_fit_includebump.pdf : /home/eugene/simulations/progenitor_cone/explore_burn_torch/outputs/ro1e7/vdet-scans/vdet_scan_combine/plotfit.py
+
+__________________________________________
+dens_multi_new.pdf : /home/eugene/simulations/progenitor_cone/explore_burn_torch/outputs/ro1e7/xc12-scans/scan_xc12-0.5_xc12-0.05_46pts/post_dv-0.0001e9_manual_wn_36/plt_dens_multi.py
