@@ -9,11 +9,11 @@ basenm         = "400k_Tc7e8_co_wd_R001_"
 # Seed for Realization 2
 ignMPoleSeed =   1866936915
 
-restart        = .false.
+restart        = .true.
 
-checkpointFileNumber    = 0
-plotFileNumber          = 0
-particleFileNumber      = 0
+checkpointFileNumber    = 25
+plotFileNumber          = 251
+particleFileNumber      = 501
 
 # dump checkpoint files every trstrt seconds
 checkpointFileIntervalTime       = 0.1
