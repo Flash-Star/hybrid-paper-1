@@ -124,57 +124,34 @@
 \title{Type Ia Supernova Explosions from Hybrid Carbon-Oxygen-Neon White Dwarf Progenitors}
 
 \author{
-Donald E.\ Willcox\altaffilmark{1},
-Dean M.\ Townsley\altaffilmark{2},
-Alan C.\ Calder\altaffilmark{3,4},
-Pavel A.\ Denissenkov\altaffilmark{5,6},
-and Falk Herwig\altaffilmark{5,6}
+Carlyn N.\ Augustine\altaffilmark{1},
+Donald E.\ Willcox\altaffilmark{2},
+Dean M.\ Townsley\altaffilmark{3},
+and Alan C.\ Calder\altaffilmark{2,4}
 }
 
 \altaffiltext{1}{
   Department of Physics and Astronomy,
-  Stony Brook University, Stony Brook, NY, 11794-3800, USA; \\
-  \href{mailto:donald.willcox@stonybrook.edu}{donald.willcox@stonybrook.edu}
+  The University of Alabama, Tuscaloosa, AL, 35487-0324, USA
 }
 \altaffiltext{2}{
   Department of Physics and Astronomy,
-  The University of Alabama, Tuscaloosa, AL, 35487-0324, USA
+  Stony Brook University, Stony Brook, NY, 11794-3800, USA; \\
+  \href{mailto:donald.willcox@stonybrook.edu}{donald.willcox@stonybrook.edu}
 }
 \altaffiltext{3}{
-  Department of Physics and Astronomy,
-  Stony Brook University, Stony Brook, NY, 11794-3800, USA
-}
-\altaffiltext{4}{
   Institute for Advanced Computational Sciences,
   Stony Brook University, Stony Brook, NY, 11794-5250, USA
 }
-\altaffiltext{5}{
-  Department of Physics and Astronomy, University of Victoria, PO Box 1700, STN CSC, 
-  Victoria, BC V8W 2Y2, Canada
-}
-\altaffiltext{6}{
-  Joint Institute for Nuclear Astrophysics, Notre Dame, IN 46556, USA
-}
 
 \begin{abstract}
-Motivated by recent results in stellar evolution that predict the
-existence of hybrid white dwarf (WD) stars with a C-O core inside an
-O-Ne shell, we simulate thermonuclear (Type Ia) supernovae from these
-hybrid progenitors. We use the \FLASH\ code to perform
-multidimensional simulations in the deflagration to detonation
-transition (DDT) explosion paradigm. Our hybrid progenitor models were
-produced with the \MESA\ stellar evolution code and include the
-effects of the Urca process, and we map the progenitor model to the
-\FLASH\ grid. We performed a suite of DDT simulations over a range of
-ignition conditions consistent with the progenitor's thermal and
-convective structure assuming multiple ignition points. To compare the
-results from these hybrid WD stars to previous results from C-O white
-dwarfs, we construct a set of C-O WD models with similar properties
-and similarly simulate a suite of explosions.  We find that despite
-significant variability within each suite, trends distinguishing the
-explosions are apparent in their \Ni{56} yields and the kinetic
-properties of the ejecta. We compare our results to other
-  recent work that studies explosions from these hybrid progenitors.
+We present simulations of thermonuclear (type Ia) supernovae
+from hybrid C/O/Ne progenitor white dwarfs. These progenitors 
+were evolved though accretion with the \MESA\ stellar evolution code 
+and include blah blah about the new hybridocity....
+For comparison, we performed a set of supernova simulations from
+traditional C/O progenitors....
+We find ....
 \end{abstract}
 
 \keywords{hydrodynamics --- nuclear reactions, nucleosynthesis, abundances
@@ -183,192 +160,58 @@ properties of the ejecta. We compare our results to other
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \label{sec:intro}
-Type Ia supernovae (\SNeIa) are bright stellar explosions that 
-produce $\sim 0.6~\Msun$ of radioactive \Ni{56}, the decay of
-which powers the light curve and leads to a relation between
-the peak brightness of an event and the rate of its decline
-from maximum~\citep{phillips:absolute}. This relation
-enables \SNeIa\ to be used as ``standard
-candles'' for cosmological studies, and this use led to 
-the discovery that the expansion of the Universe is accelerating 
+Type Ia supernovae (\SNeIa) are bright stellar explosions....
+
+Phillips relation
+~\citep{phillips:absolute}. 
+
+Cosmology
 due to dark energy \citep{riess.filippenko.ea:observational,
 perlmutter.aldering.ea:measurements,leibundgut2001}. 
 
-Despite intense study (driven in part by their application as distance
-indicators for cosmology), we still have only an incomplete
-understanding of the explosion mechanism and fundamental questions,
-such as the likely progenitor system(s), persist. It is widely
-accepted that \SNeIa\ result from the thermonuclear explosion of a
-white dwarf (WD) composed largely of C and O, with this understanding
-going back many
-decades~\citep{hoylefowler60,arnett.truran.ea:nucleosynthesis}. The
-rapid thermonuclear fusion of C and O in a WD releases enough energy
-to unbind it, produces the \Ni{56} necessary to power the light curve,
-and explains the lack of H observed in the spectra.
-
-There are, however, several possible progenitor systems for such a
-configuration. All models involve a binary system and at least one C-O
-WD, which follows from the original association of \SNeIa\ with C-O
-burning under degenerate conditions~\citep{hoylefowler60}.
-%awk
-Some proposed systems posit a single white dwarf, the single
-degenerate (SD) paradigm, and some posit the merger or collision of
-two white dwarfs, the double degenerate (DD) paradigm, and within
-these are variations.
-%\citep{hoylefowler60,webbink84,ibentutukov84}. 
-
-The ``classic'' model is the Chandrasekhar-mass model in which a white
-dwarf gains mass from a companion, a main sequence or red giant star,
-or perhaps a He WD, and a thermonuclear runaway occurs just as it
-approaches the Chandrasekhar limiting mass
+Brief discussion of progentors...
+ancient history~\citep{hoylefowler60,arnett.truran.ea:nucleosynthesis}. The
+Single degenerate 
 \citep{hoylefowler60,trucam71,whelaniben73,Nomo84}. Alternately, in
-the sub-Chandrasekhar-mass scenario, explosive burning in the accreted
-layer triggers a detonation at the surface or in the core of a
-lower-mass WD \citep{nomoto80,woosleyweavertaam80,simetal2010}.
 
-The other main class of models is the DD progenitor,
+Other models
 \citep{webbink84,ibentutukov84}, in which two WDs inspiral and merge.
-This scenario includes inspiraling pairs, collisions, violent mergers,
-and also the ``core-degenerate'' model where the merger takes place in
-a common envelope
-\citep{raskinetal2009,pakmoretal2011,kashi:2011,pakmoretal2012a,Shenetal12}
-Also
-see~\citet{hillebrandt.niemeyer:type,howell2011,hillebrandtetal2013,calderetal2013}
-for additional discussion.
 
-The observational evidence of one progenitor vs.\ another is
-conflicting. \SNeIa\ show a wide range of luminosities and also the
-possibility that there are two classes of
-progenitor~\citep{MannucciEtAl06,howelletal+09,howell2011}. Observational
-and population synthesis~\citep{yungelsonlivio2000, Maoz2008,
-  Toonenetal2012, Claeysetal2014} arguments suggest that there simply
-may not be enough Chandrasekhar-mass progenitors to explain the
-observed \SNIa\ rate.  There is, however, disagreement over the
-significance of these observations~\citep{hachisu:2008} and our
-understanding of the different progenitor systems is subject to
-uncertainties in aspects of their pre-supernova evolution, including
-the effects of self-absorption on the number of supersoft X-ray
-sources predicted from the SD
-channel~\citep{Nielsenetal2013}. Certainly there is disagreement in
-the interpretation of observations that stems from uncertainty in the
-accretion phase of SD evolution~\citep{hachisu:2010}.
-
-Additionally, the oft-cited claim that the WD in the SD channel would
-lose mass via nova explosions, thereby preventing it from reaching the
-Chandrasekhar mass, is questioned on the basis of high observed WD
-masses in cataclysmic variables (CVs) relative to
-pre-CVs~\citep{Zorotovic:2011}. Prior work on novae and rapidly
-accreting WDs strongly suggests that novae will not be able to
-grow~\citep{denissenkovetal2013b,denissenkovetal2014}, especially not
-from WD masses of $0.83~\Msun$, suggested to be the mean mass of WDs
-in CVs in~\citet{Zorotovic:2011}. Recently, binary population
-synthesis calculations by~\citet{Wijnenetal2015} explored both thermal
-time-scale mass transfer and mass increase during novae as potential
-solutions, finding that both mechanisms result in contradictions with
-observations and cannot satisfy the observed WD mass difference.
-
-However, if it is possible to get a \SNeIa\ out of the SD scenario,
-then ``hybrid'' C-O-Ne WDs (WDs with a C-O core in an O-Ne
-shell)~\citep{denissenkovetal2015} may play a key role (cf.
-\secref{section:hybrid_progenitor_models}). Prior stellar evolution
-work by~\citet{GarciaBerroetal1997} produced an O-Ne WD with a \C{12}
-abundance as high as $0.048$ and suggested that this is sufficient to
-ignite an explosion if the WD accreted matter to approach the
-Chandrasekhar mass. The hybrid WD of~\citet{denissenkovetal2015} has a
-significantly higher average \C{12} abundance of $0.17$ and such WDs
-would provide readily ignitable Ia progenitors that are already very
-close to the Chandrasekhar limiting mass, and are therefore perhaps
-the most likely to produce a \SNeIa.
-
-Acknowledging the ignitability of hybrid C-O-Ne WDs,
+Hybrid models 
+old 
+\citep{denissenkovetal2015}
 \citet{Wangetal2014} and \citet{Mengetal2014} presented binary
-population synthesis studies for these hybrid WDs and suggested they
-find consistency with the observed properties of Type Iax events,
-though uncertainties remain in estimating the rate of \SNeIa\ from
-hybrid WDs due to the uncertain carbon-burning rate and
-common-envelope ejection efficiency. The study we present here
-addresses \SNeIa\ explosions from these hybrid models and other
-research groups have also recently explored this possiblilty using
-hydrodynamic simulations.  \citet{kromeretal2015} performed pure
-deflagration simulations from C-core models and \citet{bravoetal2016}
-simulated explosions from a variety of progenitor models, including
-WDs with similar stellar evolution to those of
-\citet{denissenkovetal2015}.  We compare these explosion studies to
-ours in the discussion below.
 
-While there is uncertainty, some contemporary observations do strongly
-support the SD progenitor. Events like PTF11kx and others show distinct 
-circumstellar shells of material that can be best explained in the SD
-context~\citep{dildayetal2012,silverman:2013}. The SNR 3C 397 is heralded
-as a case where only an explosion from a Chandrasekhar-mass progenitor can 
-produce the nuclei seen in the remnant, due to the need for electron captures 
-at high density~\citep{3c397}.  
-The recent observation of a UV pulse~\citep{cao:2015,cao:2015e} in the
-early evolution of an \SNIa\ also supports the SD model. 
-Observations of remnants also offer support 
-for Chandrasekhar-mass explosions, including wind-blown shells in 
-RCW86~\citep{williams:2011} and shocked circumstellar material/bubble in the Kepler
-remnant~\citep{chiotellis:2012,burkey:2013}.  Altogether, there is
-substantial evidence that suggests that the SD channel plays a role in
-at least some of the observed \SNeIa~\citep{baron2014}.
 
-The sub-Chandrasekhar-mass model does not have the population
-synthesis arguments working against it and we know low-mass WDs in
-binary systems exist. Systems that are believed will evolve to an
-explosion have been observed~\citep{kilic:2014}, potential events have
-been identified~\citep{geier:2013,inserra:2015}, and the Type Iax
-sub-class of SN Ia~\citep{foleyetal2013,wang:2013} have been suggested
-as being sub-Chandrasekhar-mass events themselves.
+Recent results from stellar evolution
+The models we are exploding \citep{brooksetal2017}
 
-Observational evidence also supports the DD progenitor system, and
-the scenario is  increasingly seen as the likely progenitor of some
-events. SN 2011fe has been intensely observed and does not show features
-in its spectra that would be expected if there were a normal stellar
-companion~\citep{graham:sn2011fe}, suggesting a DD system. Super-Chandrasekhar
-mass explosions like SN~2007if~\citep{scalzo:2010,Yuan:2010} and
-SNLS~03D3bb~\citep{howell+06} also suggest mergers. There are
-also many population synthesis arguments in favor of mergers as well 
-\citep[see][for a review]{maoz:2014}.
+If we refer to the work by name, it should appear ``The hybrid models
+of~\citet{brooksetal2017}." Or, we can just cite it~\citep{brooksetal2017}.
 
 
 \subsection{The Chandrasekhar-mass Single Degenerate Scenario}
 
-
-In the Chandrasekhar-mass scenario, the central temperature and 
-density of the WD increase as it accretes mass from a binary companion 
-and approaches the limiting Chandrasekhar mass. As the mass
-approaches the limit, central conditions become hot enough for 
-carbon fusion to begin (via the \C{12}--\C{12} reaction), driving 
-the development of convection throughout the interior of the WD
+Explain the Single Degenerate scenario
 \citep{Baraffe2004Stability-of-Su,WoosWunsKuhl04,wunschwoosley2004,Kuhletal06,nonakaetal2012}.
-As the central temperature reaches $\sim 7\times 10^8~\mathrm{K}$, the
-fuel in a convective plume burns to completion before it can cool via
 expansion \citep{Nomo84,WoosWunsKuhl04}, and a flame is born. 
 
-The nature of this burning, be it a supersonic detonation or subsonic 
-deflagration, largely determines the outcome of the explosion. 
-It has been known for some time that a purely supersonic burning front 
-cannot
-explain observations because the supersonic front very rapidly incinerates 
-the star without it having time to react and 
-expand~\citep{arnett.truran.ea:nucleosynthesis}. The lack of expansion 
-allows most of the star to burn at high densities,
-which produces an excessive $^{56}$Ni yield and does not match the
-stratified composition of observed remnants~\citep{mazzalietal2008}.  
-Instead, a subsonic deflagration must ignite, which allows the
-outer layers of the star to expand ahead of the burning front.
-In this case, the density of the expanding material decreases, 
-which leads to incomplete burning of more mass and thus
-increased production of intermediate mass elements. This
-deflagration must accelerate via instabilities and turbulent
-interaction, a topic that has been explored extensively in the 
-past~\citep{khokhlov1993,bychovliberman1995,
+Explain DDT
+
+Go through below and cite some of these as you tell the story
+
+d~\citep{arnett.truran.ea:nucleosynthesis}.
+~\citep{mazzalietal2008}.  
+
+
+\citep{khokhlov1993,bychovliberman1995,
 SNrt,Khok95,NiemHill95,khoketal1997,ZingDurs07,
 cholazarianvishniac2003,
 roepkehn2003,roepkehn2004,
 Zingale2005Three-dimension,Schmetal06a, Schmetal06b,Aspdetal08,
 Woosetal09,csetal2009,hicksrosner2013,c-ssr2013,
 jacketal2014,poludnenko2015,hicks2015}.
+
 
 A deflagration alone will not produce a event of normal brightness and
 expansion velocity~\citep{roepkeetal07}. Instead, the initial
@@ -387,6 +230,8 @@ assumptions about the ignition~\citep{townetal2009}, but research has
 shown that the results are very sensitive to the details of the
 ignition~\citep{PlewCaldLamb04,GameKhokOran05,garciasenz:2005,
   roepkeetal07,Jordan2008Three-Dimension}.
+
+Summarize what we do a la:
 In our simulations, we
 initialize a detonation once the deflagration front reaches a
 characteristic DDT fuel density, which controls the degree of
